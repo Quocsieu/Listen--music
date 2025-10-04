@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login-music.css">
+    <link rel="stylesheet" href="/bootstrap-5.3.7-dist/bootstrap-5.3.7-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <script>
+        function createStart(){
+        //Tạo ngôi sao
+            const start = document.createElement('img') //document.createElement: tạo một element trong html này với thuộc tính img
+            start.src = 'Thiết_kế_chưa_có_tên-removebg-preview.png'
+            start.className = 'start' //lưu cái thằng start từ thằng 'start' để style css
+        //vị trí xuất hiện của start
+            start.style.top = Math.random () * window.innerHeight + 'px';
+            //Tạo vị trí ở trên //số 0 đến 1 bất kì nhân cho chiều cao của màn hình + với đơn vị px
+            start.style.left = Math.random () * window.innerWidth + 'px';
+        //thêm cái thằng start vào body
+            document.body.appendChild(start);
+        //khi sao kết thúc
+            start.addEventListener("animationend", () => start.remove());
+        }
+        setInterval(createStart, 500);
+    </script>
+    <div class="col-9 col-md-5 login">
+        <!-- chữ đang nhập -->
+        <div class="title-login">Login</div>
+        <!-- Input login -->
+        <div class="login-item">
+            <input class="itemlogin-child" type="text" placeholder="Username">
+            <input class="itemlogin-child" type="password" placeholder="Password";>
+        </div>
+        <!-- đăng nhập và quên mk -->
+         <div class="login-midle">
+            <p class="forgot-password">Forgot password</p>
+            <button class="button-login">Login</button>
+         </div>
+        <!-- Login or Fb, Google -->
+        <div class="login-footer">
+            <p class="text-or">Or</p>
+            <h5 class="login-with-facebook">Login with Facebook</h5>
+            <h5 class="login-with-google">Login with Google</h5>
+        </div>
+
+    </div>
+</body>
+</html>
